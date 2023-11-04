@@ -23,6 +23,9 @@ useradd expense
 
 mkdir /app
 
+echo -e "${color} delete old content \e[0m"
+rm -rf /app/* &>>$log_file
+
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip
 cd /app
 unzip /tmp/backend.zip
