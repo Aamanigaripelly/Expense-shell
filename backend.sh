@@ -39,8 +39,9 @@ if [ ! -d /app ]; then
 fi
 
 echo -e "${color} delete old content \e[0m"
-rm -rf /app/* &>>$log_filestatus_check
+rm -rf /app/* &>>$log_file
 status_check
+
 
 echo -e "${color} Download Application Content \e[0m"
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip
